@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen Kumar Jana — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f2eb;
+  --white:#ffffff;
+  --ink:#1c1a17;
+  --ink2:#4a4640;
+  --ink3:#9a9188;
+  --teal:#2d7a6e;
+  --teal-light:#e4f2f0;
+  --teal-mid:#3d9688;
+  --amber:#d4762a;
+  --amber-light:#fdf0e4;
+  --red:#c94a3a;
+  --red-light:#faeae8;
+  --serif:'Fraunces',serif;
+  --sans:'Plus Jakarta Sans',sans-serif;
+  --max:900px;
+  --gutter:clamp(1.5rem,5vw,3rem);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.65}
+
+/* ── NAV ── */
+nav{
+  background:var(--bg);border-bottom:1px solid rgba(28,26,23,0.08);
+  padding:0 var(--gutter);height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+}
+.nav-brand{display:flex;align-items:center;gap:11px}
+.nav-box{width:38px;height:38px;border-radius:8px;background:var(--ink);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.nav-box span{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff;line-height:1}
+.nav-brand-title{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);line-height:1.15}
+.nav-brand-sub{font-size:10px;color:var(--ink3);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--ink2);text-decoration:none;letter-spacing:0.02em;padding:7px 13px;border-radius:8px;transition:all 0.18s}
+.nav-links a:hover{background:rgba(28,26,23,0.07);color:var(--ink)}
+.nav-pdf{background:var(--ink);color:#fff;border-radius:100px;padding:8px 18px;font-size:11.5px;font-weight:600;border:none;cursor:pointer;font-family:var(--sans);display:flex;align-items:center;gap:6px;transition:background 0.2s;letter-spacing:0.02em;margin-left:8px}
+.nav-pdf:hover{background:var(--teal)}
+
+/* ── HERO ── */
+.hero{padding:5rem var(--gutter) 3.5rem;max-width:var(--max);margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal-light);border-radius:100px;padding:6px 16px;font-size:11px;font-weight:600;color:var(--teal);margin-bottom:1.8rem;letter-spacing:0.04em}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.hero-grid{display:grid;grid-template-columns:1fr 250px;gap:4rem;align-items:end}
+@media(max-width:640px){.hero-grid{grid-template-columns:1fr;gap:2rem}}
+.hero-h{font-family:var(--serif);font-size:clamp(3.2rem,7vw,5.8rem);font-weight:900;line-height:0.93;letter-spacing:-0.03em;color:var(--ink)}
+.hero-h em{font-style:italic;font-weight:300;color:var(--teal)}
+.hero-sub{margin-top:1.4rem;font-size:13.5px;color:var(--ink2);line-height:1.75;font-weight:300;max-width:400px}
+.hero-sub b{color:var(--ink);font-weight:600}
+.hero-email{margin-top:1.4rem;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:var(--teal);background:var(--teal-light);padding:7px 13px;border-radius:8px}
+.hero-org-box{background:var(--white);border-radius:14px;padding:1.3rem 1.4rem;border:1px solid rgba(28,26,23,0.08);margin-bottom:1rem}
+.hero-org-l{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
+.hero-org-n{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35}
+.hero-role-box{background:var(--ink);border-radius:14px;padding:1rem 1.4rem}
+.hero-role-l{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:5px}
+.hero-role-n{font-size:13px;font-weight:600;color:#fff}
+
+/* ── METRICS ── */
+.metrics-wrap{padding:0 var(--gutter) 3rem;max-width:var(--max);margin:0 auto}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:540px){.metrics-grid{grid-template-columns:1fr 1fr}}
+.mc{background:var(--white);border-radius:16px;padding:1.4rem 1.2rem;border:1px solid rgba(28,26,23,0.06);position:relative;overflow:hidden}
+.mc-bar{position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+.mc.t1 .mc-bar{background:var(--teal)}.mc.t2 .mc-bar{background:var(--amber)}.mc.t3 .mc-bar{background:var(--red)}.mc.t4 .mc-bar{background:#5c7ec4}
+.mc-n{font-family:var(--serif);font-size:2.5rem;font-weight:900;line-height:1;margin-bottom:4px}
+.mc.t1 .mc-n{color:var(--teal)}.mc.t2 .mc-n{color:var(--amber)}.mc.t3 .mc-n{color:var(--red)}.mc.t4 .mc-n{color:#5c7ec4}
+.mc-label{font-size:11px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.mc-sub{font-size:10px;color:var(--ink3)}
+
+/* ── WHAT COVER ── */
+.what-wrap{padding:0 var(--gutter) 4rem;max-width:var(--max);margin:0 auto}
+.what-grid{display:grid;grid-template-columns:270px 1fr;gap:3rem;align-items:start}
+@media(max-width:600px){.what-grid{grid-template-columns:1fr}}
+.what-cards{display:flex;flex-direction:column;gap:11px}
+.wcard{background:var(--white);border-radius:13px;padding:1rem 1.3rem;border:1px solid rgba(28,26,23,0.06);display:flex;align-items:center;gap:12px}
+.wcard-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wcard-icon svg{width:17px;height:17px}
+.wcard-icon.teal{background:var(--teal-light)}.wcard-icon.amber{background:var(--amber-light)}.wcard-icon.red{background:var(--red-light)}.wcard-icon.blue{background:#eef2fc}
+.wcard-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:1px}
+.wcard-sub{font-size:10.5px;color:var(--ink3)}
+.what-h{font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.1rem}
+.what-h em{font-style:italic;font-weight:300;color:var(--teal)}
+.what-desc{font-size:13px;color:var(--ink2);line-height:1.8;font-weight:300}
+.what-desc b{color:var(--ink);font-weight:600}
+
+/* ── SECTION HEADER ── */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:0.4rem}
+.sh-eye{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
+.sh-title{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:900;letter-spacing:-0.02em;color:var(--ink);line-height:1}
+.sh-tag{font-size:11px;color:var(--ink3)}
+.sh-div{height:1px;background:rgba(28,26,23,0.08);margin:1.1rem 0 1.8rem}
+
+/* ── JOURNEY ── */
+.journey-wrap{padding:0 var(--gutter) 4rem;max-width:var(--max);margin:0 auto}
+.journey-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(28,26,23,0.08);
+  border-radius:16px;overflow:hidden;
+  align-items:start;
+}
+@media(max-width:640px){.journey-grid{grid-template-columns:1fr 1fr}}
+.jph{background:var(--white);padding:1.6rem 1.4rem;position:relative;height:100%}
+.jph-num{font-family:var(--serif);font-size:3.2rem;font-weight:900;line-height:1;color:rgba(28,26,23,0.05);position:absolute;top:0.9rem;right:1rem}
+.jph-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem}
+.jph-icon svg{width:16px;height:16px}
+.jph:nth-child(1) .jph-icon{background:var(--teal-light);color:var(--teal)}
+.jph:nth-child(2) .jph-icon{background:#eef2fc;color:#4a72c4}
+.jph:nth-child(3) .jph-icon{background:var(--amber-light);color:var(--amber)}
+.jph:nth-child(4) .jph-icon{background:#eef8f5;color:#2e8b6a}
+.jph-label{font-size:8.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:5px}
+.jph:nth-child(1) .jph-label{color:var(--teal)}
+.jph:nth-child(2) .jph-label{color:#4a72c4}
+.jph:nth-child(3) .jph-label{color:var(--amber)}
+.jph:nth-child(4) .jph-label{color:#2e8b6a}
+.jph-title{font-family:var(--serif);font-size:0.95rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:0.75rem}
+.jph-body{font-size:11.5px;color:var(--ink2);line-height:1.72;font-weight:300}
+.jph-tags{margin-top:1rem;display:flex;flex-wrap:wrap;gap:4px}
+.jt{font-size:9.5px;padding:2px 7px;border-radius:5px;font-weight:500;background:rgba(28,26,23,0.05);color:var(--ink2)}
+
+/* ── PROJECTS ── */
+.projects-wrap{padding:0 var(--gutter) 4rem;max-width:var(--max);margin:0 auto}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media(max-width:560px){.proj-grid{grid-template-columns:1fr}}
+.pcard{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid rgba(28,26,23,0.06);display:flex;flex-direction:column}
+.pcard-top{padding:1.7rem 1.7rem 1.3rem;flex-grow:1}
+.pcard-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:5px;margin-bottom:0.9rem}
+.pcard:nth-child(1) .pcard-tag{background:var(--teal-light);color:var(--teal)}
+.pcard:nth-child(2) .pcard-tag{background:var(--amber-light);color:var(--amber)}
+.pcard-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:1.1rem}
+.prow{display:grid;grid-template-columns:50px 1fr;gap:10px;padding:7px 0;border-top:1px solid rgba(28,26,23,0.06)}
+.pk{font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);padding-top:2px}
+.pv{font-size:11.5px;color:var(--ink2);line-height:1.65;font-weight:300}
+.pv b{color:var(--ink);font-weight:600}
+.pcard-foot{padding:1.1rem 1.7rem;display:flex;align-items:center;justify-content:space-between}
+.pcard:nth-child(1) .pcard-foot{background:var(--teal-light)}
+.pcard:nth-child(2) .pcard-foot{background:var(--amber-light)}
+.pf-big{font-family:var(--serif);font-size:1.3rem;font-weight:900;line-height:1.1}
+.pcard:nth-child(1) .pf-big{color:var(--teal)}
+.pcard:nth-child(2) .pf-big{color:var(--amber)}
+.pf-sub{font-size:9.5px;color:var(--ink3);text-align:right;line-height:1.5;max-width:110px}
+
+/* ── PENTEST ── */
+.pentest-wrap{padding:0 var(--gutter) 4rem;max-width:var(--max);margin:0 auto}
+.pt-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(28,26,23,0.08);border-radius:16px;overflow:hidden;margin-bottom:1px}
+.ptc{background:var(--white);padding:1.3rem 1.2rem}
+.ptc-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:0.9rem;padding-bottom:0.7rem;border-bottom:1px solid rgba(28,26,23,0.07)}
+.ptc-app{font-family:var(--serif);font-size:0.92rem;font-weight:700;color:var(--ink)}
+.ptc-scope{font-size:8.5px;font-weight:600;letter-spacing:0.05em;padding:2px 6px;border-radius:5px;margin-top:3px;display:inline-block}
+.ptc-scope.c{background:var(--teal-light);color:var(--teal)}
+.ptc-scope.cs{background:var(--amber-light);color:var(--amber)}
+.ptc-scope.ios{background:#eef2fc;color:#4a72c4}
+ul.flist{list-style:none}
+ul.flist li{font-size:10.5px;color:var(--ink2);padding:3px 0;display:flex;align-items:flex-start;gap:6px;border-bottom:1px solid rgba(28,26,23,0.05);line-height:1.4;font-weight:300}
+ul.flist li:last-child{border-bottom:none}
+ul.flist li::before{content:'';width:5px;height:5px;border-radius:50%;margin-top:4px;flex-shrink:0}
+ul.flist li.own::before{background:var(--teal)}
+ul.flist li.sup::before{background:var(--amber)}
+ul.flist li.fp::before{background:var(--ink3)}
+.pt-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:1rem;padding:0.7rem 1rem;background:var(--white);border-radius:9px;border:1px solid rgba(28,26,23,0.06);width:fit-content}
+.leg{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--ink3);font-weight:500}
+.legdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* ── SKILLS ── */
+.skills-wrap{padding:0 var(--gutter) 5rem;max-width:var(--max);margin:0 auto}
+.sk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+@media(max-width:560px){.sk-grid{grid-template-columns:1fr 1fr}}
+.skc{background:var(--white);border-radius:15px;padding:1.4rem;border:1px solid rgba(28,26,23,0.06);border-top:3px solid}
+.skc:nth-child(1){border-top-color:var(--teal)}.skc:nth-child(2){border-top-color:#5c7ec4}.skc:nth-child(3){border-top-color:#2e8b6a}.skc:nth-child(4){border-top-color:var(--amber)}
+.skc-label{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.9rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(28,26,23,0.07)}
+.skc:nth-child(1) .skc-label{color:var(--teal)}.skc:nth-child(2) .skc-label{color:#4a72c4}.skc:nth-child(3) .skc-label{color:#2e8b6a}.skc:nth-child(4) .skc-label{color:var(--amber)}
+ul.sk-list{list-style:none}
+ul.sk-list li{font-size:11.5px;color:var(--ink2);padding:5px 0;border-bottom:1px solid rgba(28,26,23,0.06);display:flex;align-items:center;gap:7px;font-weight:400}
+ul.sk-list li:last-child{border-bottom:none}
+ul.sk-list li::before{content:'→';font-size:9.5px;color:var(--ink3);flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:2.5rem var(--gutter)}
+.ft-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem}
+.ft-name{font-family:var(--serif);font-size:1.5rem;font-weight:900;color:#fff;letter-spacing:-0.01em;margin-bottom:3px}
+.ft-name em{font-style:italic;font-weight:300;color:var(--teal-mid)}
+.ft-email{font-size:11px;color:rgba(255,255,255,0.38);font-weight:300}
+.ft-meta{font-size:11px;color:rgba(255,255,255,0.38);line-height:1.7;text-align:right;font-weight:300}
+.ft-copy{font-size:9.5px;color:rgba(255,255,255,0.18);margin-top:6px;text-align:right}
+
+/* ── PRINT STYLES ── */
+/* ── UPDATED PRINT STYLES ── */
+@media print {
+  @page { margin: 1cm; size: auto; }
+  
+  /* Force all sections to have minimal padding so they don't jump pages */
+  .hero, .metrics-wrap, .what-wrap, .journey-wrap, .projects-wrap, .pentest-wrap, .skills-wrap {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Ensure cards don't break mid-content, but allow them to flow */
+  .mc, .wcard, .jph, .pcard, .ptc, .skc {
+    break-inside: avoid;
+    margin-bottom: 5px !important;
+  }
+
+  /* Hide UI elements that aren't needed in a PDF */
+  nav, .nav-pdf { display: none !important; }
+  
+  /* Make sure colors and backgrounds print */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-box"><span>P</span></div>
+    <div>
+      <div class="nav-brand-title">Portfolio</div>
+      <div class="nav-brand-sub">Sony India Software Centre</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#journey">Journey</a>
+    <a href="#projects">Projects</a>
+    <a href="#pentesting">Pentesting</a>
+    <a href="#skills">Skills</a>
+    <button class="nav-pdf" onclick="window.print()">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V4M4 8l4 4 4-4"/><path d="M2 14h12"/></svg>
+      Save as PDF
+    </button>
+  </div>
+</nav>
+
+<section>
+  <div class="hero">
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Software Engineer Intern · SARD</div>
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-h">Praveen<br>Kumar <em>Jana</em></h1>
+        <p class="hero-sub">I integrate offensive security into modern development by building <b>AI-driven SAST agents</b> to reduce noise in vulnerability detection, and by conducting <b>deep-dive penetration tests</b> to uncover and secure <b>critical business logic flaws</b>.</p>
+        <a href="mailto:janapraveen555@gmail.com" class="hero-email" style="text-decoration: none; color: inherit;">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="14" height="10" rx="2"/>
+            <path d="M1 6l7 4 7-4"/>
+          </svg>
+          janapraveen555@gmail.com
+        </a>
+      </div>
+      <div>
+        <div class="hero-org-box">
+          <div class="hero-org-l">Organization</div>
+          <div class="hero-org-n">Sony India Software Centre<br>Private Limited</div>
+        </div>
+        <div class="hero-role-box">
+          <div class="hero-role-l">Role & Department</div>
+          <div class="hero-role-n">Software Engineer Intern · SARD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="metrics-wrap">
+    <div class="metrics-grid">
+      <div class="mc t1"><div class="mc-bar"></div><div class="mc-n">8</div><div class="mc-label">Web Apps Pentested</div><div class="mc-sub">Client & server-side</div></div>
+      <div class="mc t2"><div class="mc-bar"></div><div class="mc-n">35+</div><div class="mc-label">Vulnerabilities Found</div><div class="mc-sub">Across all engagements</div></div>
+      <div class="mc t3"><div class="mc-bar"></div><div class="mc-n">01</div><div class="mc-label">AI SAST Agent</div><div class="mc-sub">Support contributor</div></div>
+      <div class="mc t4"><div class="mc-bar"></div><div class="mc-n">01</div><div class="mc-label">Mobile Platform</div><div class="mc-sub">Android pentesting</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="what-wrap">
+    <div class="what-grid">
+      <div class="what-cards">
+        <div class="wcard">
+          <div class="wcard-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="wcard-title">Web App Security</div><div class="wcard-sub">8 Applications Tested</div></div>
+        </div>
+        <div class="wcard">
+          <div class="wcard-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--amber)"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+          <div><div class="wcard-title">AI / RAG Engineering</div><div class="wcard-sub">SAST Enrichment Engine</div></div>
+        </div>
+        <div class="wcard">
+          <div class="wcard-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+          <div><div class="wcard-title">Mobile Security</div><div class="wcard-sub">iOS SAST · Android Pentest</div></div>
+        </div>
+        <div class="wcard">
+          <div class="wcard-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#4a72c4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div><div class="wcard-title">Software Development</div><div class="wcard-sub">Python · C · C++ · Linux</div></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="what-h">What do<br>I <em>cover?</em></h2>
+        <p class="what-desc">I work at the intersection of <b>offensive security and AI engineering</b>. On one side, I conduct end-to-end web application penetration tests — identifying real vulnerabilities and delivering professional reports. On the other, I build intelligent tools that make security smarter — using <b>RAG pipelines, LLMs, and vector databases</b> to automate and enrich SAST findings, cutting through noise to what actually matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="journey-wrap">
+    <div class="sh">
+      <div><div class="sh-eye">Learning Path</div><h2 class="sh-title">My Internship Journey</h2></div>
+      <span class="sh-tag">4 Phases</span>
+    </div>
+    <div class="sh-div"></div>
+    <div class="journey-grid">
+
+      <div class="jph">
+        <div class="jph-num">01</div>
+        <div class="jph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="jph-label">Foundation</div>
+        <div class="jph-title">Security Fundamentals, Python & Web App Testing</div>
+        <p class="jph-body">Core web security — OWASP Top 10, CWE/CVE, SAST & DAST concepts. Python OOP with mini projects. Hands-on with Burp Suite, Kali Linux, and PortSwigger labs. Practical assessment on demo.testfire.net with full presentation to mentor.</p>
+        <div class="jph-tags">
+          <span class="jt">OWASP Top 10</span><span class="jt">SAST & DAST</span><span class="jt">Burp Suite</span><span class="jt">Python OOP</span><span class="jt">PortSwigger</span><span class="jt">CVSS</span>
+        </div>
+      </div>
+
+      <div class="jph">
+        <div class="jph-num">02</div>
+        <div class="jph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="jph-label">AI / RAG Project</div>
+        <div class="jph-title">AI-Powered SAST Enrichment Engine</div>
+        <p class="jph-body">Built a full RAG pipeline over four knowledge sources — Fortify, CWE, OWASP cheat sheets, VulnCat. Applied chunking strategies, generated embeddings, integrated ChromaDB. Contributed to the Streamlit SAST Agent UI for developer-friendly remediation output.</p>
+        <div class="jph-tags">
+          <span class="jt">RAG Pipeline</span><span class="jt">ChromaDB</span><span class="jt">Embeddings</span><span class="jt">LLMs</span><span class="jt">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="jph">
+        <div class="jph-num">03</div>
+        <div class="jph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <div class="jph-label">Live Pentesting</div>
+        <div class="jph-title">Real-World Web Application Assessments</div>
+        <p class="jph-body">End-to-end client & server-side security assessments across 8 production web apps. Successfully surfaced 35+ high & medium &Low -severity vulnerabilities—including complex business logic flaws and race conditions—and provided developers with actionable PoCs to ensure secure production deployment.</p>
+        <div class="jph-tags">
+          <span class="jt">8 Apps</span><span class="jt">Race Conditions</span><span class="jt">Auth Bypass</span><span class="jt">Stored XSS</span><span class="jt">Reports</span>
+        </div>
+      </div>
+
+      <div class="jph">
+        <div class="jph-num">04</div>
+        <div class="jph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="jph-label">Mobile Security</div>
+        <div class="jph-title">Mobile Application Security Testing</div>
+        <p class="jph-body">iOS static application security testing — insecure local networking, OSS and SAST analysis on intermediate and final builds. Subsequently expanded into Android mobile penetration testing, learning the methodology, tools, and approach.</p>
+        <div class="jph-tags">
+          <span class="jt">iOS SAST</span><span class="jt">OSS Analysis</span><span class="jt">Android Pentest</span><span class="jt">Mobile Security</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="projects-wrap">
+    <div class="sh">
+      <div><div class="sh-eye">Selected Work</div><h2 class="sh-title">Projects & Impact</h2></div>
+      <span class="sh-tag">2 Core Projects</span>
+    </div>
+    <div class="sh-div"></div>
+    <div class="proj-grid">
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pcard-tag">AI · Security · RAG</div>
+          <div class="pcard-title">AI-Powered SAST Enrichment Agent</div>
+          <div class="prow"><span class="pk">Problem</span><span class="pv">High <b>false-positive rates</b> in legacy SAST tools caused significant developer fatigue and slow triage times.</span></div>
+          <div class="prow"><span class="pk">Impact</span><span class="pv">Developed an AI-enrichment layer that <b>filters noise</b> and provides actionable, context-aware remediation guidance.</span></div>
+          <div class="prow"><span class="pk">Stack</span><span class="pv">Engineered a <b>RAG pipeline</b> using ChromaDB and LLMs to cross-reference 4+ security knowledge sources for high-precision results.</span></div>
+        </div>
+        <div class="pcard-foot">
+          <div class="pf-big">False Positive<br>Reduction</div>
+          <div class="pf-sub">4 sources · LLM-validated · ChromaDB</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pcard-tag">Penetration Testing · Web</div>
+          <div class="pcard-title">Web Application Security Assessments</div>
+          <div class="prow"><span class="pk">Scope</span><span class="pv">Conducted <b>full-cycle security assessments</b> on 8 production web apps, focusing on high-risk business logic and authentication.</span></div>
+          <div class="prow"><span class="pk">Process</span><span class="pv">Utilized manual Burp Suite workflows to uncover flaws, delivering <b>actionable reports</b> that enabled developers to fix bugs faster.</span></div>
+          <div class="prow"><span class="pk">Outcome</span><span class="pv">Identified <b>35+ high/medium severity flaws</b>, significantly reducing the attack surface by ensuring vulnerabilities were mitigated before production deployment.</span></div>
+        </div>
+        <div class="pcard-foot">
+          <div class="pf-big">35+ Vulnerabilities<br>Identified</div>
+          <div class="pf-sub">High & medium severity · all 8 apps</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pentesting">
+  <div class="pentest-wrap">
+    <div class="sh">
+      <div><div class="sh-eye">Application Testing</div><h2 class="sh-title">Penetration Testing Engagements</h2></div>
+      <span class="sh-tag">8 Applications</span>
+    </div>
+    <div class="sh-div"></div>
+    <div class="pt-row">
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 01</div><span class="ptc-scope c">Client</span></div>
+        <ul class="flist">
+          <li class="own">Missing Security Headers</li>
+          <li class="own">Missing Cookie Security Attributes</li>
+          <li class="own">Insecure Client-side Storage</li>
+          <li class="own">CSP Misconfiguration</li>
+          <li class="fp">CORS Misconfiguration</li>
+          <li class="fp">Clickjacking</li>
+        </ul>
+      </div>
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 02</div><span class="ptc-scope cs">Client & Server</span></div>
+        <ul class="flist">
+          <li class="own">Broken Function Level Authorization</li>
+          <li class="own">Weak Password Policy</li>
+          <li class="own">File Upload Vulnerability</li>
+          <li class="own">Auth Bypass — Missing Rate Limiting</li>
+          <li class="own">Client-side Validation Bypass</li>
+          <li class="own">Business Logic Flaw on Resource Creation</li>
+          <li class="own">Special Characters in User Inputs</li>
+          <li class="own">Delete Apps Without Archiving</li>
+          <li class="sup">Admin Portal APIs from All IPs</li>
+          <li class="sup">Suspended User Accesses App</li>
+          <li class="sup">Business Logic → Info Leakage</li>
+          <li class="sup">Verbose Error Message</li>
+        </ul>
+      </div>
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 03</div><span class="ptc-scope cs">Client & Server</span></div>
+        <ul class="flist">
+          <li class="own">User Enumeration via Error Response</li>
+          <li class="own">Improper Access Control</li>
+          <li class="own">Business Logic on Construction</li>
+          <li class="own">Upload Arbitrary Contents to Server</li>
+          <li class="own">Race Condition on Resource Creation</li>
+          <li class="own">Client-side Validation Bypass</li>
+          <li class="own">Missing Security Headers</li>
+          <li class="own">Special Characters in User Inputs</li>
+          <li class="own">Lack of Server-Side Password Policy</li>
+          <li class="own">No Rate Limiting on Endpoints</li>
+          <li class="sup">Unauthorized Signup via AWS Cognito</li>
+          <li class="sup">Unauthenticated Access to Soil Image</li>
+        </ul>
+      </div>
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 04</div><span class="ptc-scope cs">Client & Server</span></div>
+        <ul class="flist">
+          <li class="own">Race Condition on User Invite</li>
+          <li class="own">Insecure File Upload</li>
+          <li class="own">Improper Security Header Implementation</li>
+          <li class="own">Weak Password Policy</li>
+          <li class="own">Unintended URL Parsing</li>
+          <li class="own">Insecure Reset Tokens</li>
+          <li class="own">Local Caching of Sensitive Pages</li>
+          <li class="sup">Forced Email Change of Logged-in Account</li>
+          <li class="sup">Stored DOM XSS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-row" style="margin-top:1px">
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 05</div><span class="ptc-scope cs">Client & Server</span></div>
+        <ul class="flist">
+          <li class="own">Improper Session Management</li>
+          <li class="own">Local Caching of Sensitive Pages</li>
+          <li class="own">Missing Security Headers</li>
+          <li class="sup">OSS Vulnerabilities</li>
+          <li class="sup">HTTP Request Smuggling</li>
+        </ul>
+      </div>
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 06</div><span class="ptc-scope cs">Client & Server</span></div>
+        <ul class="flist">
+          <li class="own">Purchase Code Bruteforce</li>
+          <li class="own">CSRF on Hide Licence</li>
+          <li class="own">Missing & Misconfigured Headers</li>
+          <li class="own">Email Spamming via Throttling</li>
+          <li class="sup">DoS via Concurrent Request</li>
+          <li class="sup">Concurrent Sessions — Temp Account</li>
+          <li class="sup">Workflow Bypass in Device Registration</li>
+          <li class="sup">Improper Reuse — SUP Purchase Code</li>
+        </ul>
+      </div>
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 07</div><span class="ptc-scope c">Client</span></div>
+        <ul class="flist">
+          <li class="own">Missing Security Headers</li>
+          <li class="own">Local Caching of Sensitive Pages</li>
+          <li class="sup">OSS Vulnerabilities</li>
+          <li class="fp">MFA Brute Force (False Positive)</li>
+          <li class="sup">Open Redirect via OpenID Connect</li>
+          <li class="sup">Concurrent Sessions after Pwd Change</li>
+          <li class="sup">Improper Invalidation Password Reset Tokens</li>
+        </ul>
+      </div>
+      <div class="ptc">
+        <div class="ptc-head"><div class="ptc-app">App 08 — iOS</div><span class="ptc-scope ios">iOS Static</span></div>
+        <ul class="flist">
+          <li class="own">Insecure Local Networking Allowed</li>
+          <li class="own">OSS Analysis — Intermediate & Final</li>
+          <li class="own">SAST Analysis for Intermediate & Final</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-legend">
+      <div class="leg"><div class="legdot" style="background:var(--teal)"></div>Independently identified</div>
+      <div class="leg"><div class="legdot" style="background:var(--amber)"></div>Identified with team support</div>
+      <div class="leg"><div class="legdot" style="background:var(--ink3)"></div>False positive</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="skills-wrap">
+    <div class="sh">
+      <div><div class="sh-eye">Core Competencies</div><h2 class="sh-title">Technical Skills</h2></div>
+      <span class="sh-tag">4 Domains</span>
+    </div>
+    <div class="sh-div"></div>
+    <div class="sk-grid">
+      <div class="skc">
+        <div class="skc-label">Offensive Security</div>
+        <ul class="sk-list">
+          <li>Web Application Pentesting</li>
+          <li>Burp Suite & Kali Linux</li>
+          <li>OWASP Top 10 & CWE & CVE</li>
+          <li>Nmap, Nikto, ffuf, DirBuster</li>
+          <li>SSLScan, dnsrecon, TestSSL</li>
+          <li>PortSwigger Academy</li>
+          <li>TryHackMe</li>
+        </ul>
+      </div>
+      <div class="skc">
+        <div class="skc-label">AI & RAG Engineering</div>
+        <ul class="sk-list">
+          <li>RAG Pipeline Design</li>
+          <li>LLMs</li>
+          <li>Embeddings & Vector Search</li>
+          <li>ChromaDB</li>
+          <li>Fortify SAST Integration</li>
+          <li>Chunking Strategies</li>
+          <li>Streamlit Framework</li>
+        </ul>
+      </div>
+      <div class="skc">
+        <div class="skc-label">Mobile Security</div>
+        <ul class="sk-list">
+          <li>iOS Static Application Testing</li>
+          <li>Android Penetration Testing</li>
+          <li>Frida & JADX & MobSF</li>
+          <li>OSS Vulnerability Analysis</li>
+          <li>SAST Analysis</li>
+        </ul>
+      </div>
+      <div class="skc">
+        <div class="skc-label">Software Development</div>
+        <ul class="sk-list">
+          <li>Python — OOP & Scripting</li>
+          <li>C & C++</li>
+          <li>Linux & Shell Scripting</li>
+          <li>JSON Parsing & Automation</li>
+          <li>Data Preprocessing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-name">Praveen Kumar <em>Jana</em></div>
+      <div class="ft-email">janapraveen555@gmail.com</div>
+    </div>
+    <div>
+      <div class="ft-meta">Sony India Software Centre Private Limited<br>SARD · Software Engineer Intern</div>
+      <div class="ft-copy">Portfolio · 2025–26</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+</body>
+</html>
